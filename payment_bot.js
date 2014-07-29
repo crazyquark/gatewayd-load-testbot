@@ -10,7 +10,7 @@ PaymentBot = function(options){
   });
   this.interval = options.interval;
   this.payment = {
-    amount: options.amount,
+    amount: options.amount || Math.random() / 10000,
     currency: 'SFO',
     recipient: 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg'
   };
@@ -57,6 +57,7 @@ PaymentBot.prototype = {
         console.log('error', error)
       } else {
           self._loop();
+          console.log('sent', response);
       }
     });
   },
