@@ -1,10 +1,12 @@
 var RippleRestClient = require('ripple-rest-client');
 var async = require('async');
 
+var SECRET = process.env.RIPPLE_ACCOUNT_SECRET
+
 function PaymentBot(options){
   this.rippleRestClient = new RippleRestClient({
     account: 'rMsQ53ZybFVfys3BF8Sjf5XPRd3LdYDpC3',
-    secret: 'shAkcHWfeUXs7FvVPCr6KwXPTmCbB'
+    secret: SECRET
   });
   this.interval = options.interval;
   this.payment = {
