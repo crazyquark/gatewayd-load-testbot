@@ -1,18 +1,17 @@
 var RippleRestClient = require('ripple-rest-client');
 var async = require('async');
 
-var SECRET = process.env.RIPPLE_ACCOUNT_SECRET
+var TEST_SECRET = process.env.TEST_SECRET;
 
-function PaymentBot(options){
+PaymentBot = function(options){
   this.rippleRestClient = new RippleRestClient({
     account: 'rMsQ53ZybFVfys3BF8Sjf5XPRd3LdYDpC3',
-    secret: SECRET
+    secret: TEST_SECRET
   });
   this.interval = options.interval;
   this.payment = {
     amount: options.amount,
     currency: 'SFO',
-    issuer: 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg',
     recipient: 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg'
   };
 }
@@ -21,12 +20,21 @@ PaymentBot.prototype = {
   _buildPayment: function(callback) {
     var self = this;
     self.rippleRestClient.buildPayment(self.payment, function(error, payment){
-      if (error) { return callback(error, null); }
-      callback(null, payment.payments[0]);
+      if (error) {
+        return callback(error, null);
+      } else if (payment.success) {
+        var paymentObject = {
+          payment: payment.payments[0]
+        };
+        paymentObject.payment.destination_tag = '5';
+        callback(null, paymentObject);
+      } else {
+        callback(payment.message, null);
+      }
     });
   },
   _makePayment: function(payment, callback) {
-    this.rippleRestClient.sendAndConfirmPament(payment, function(error, response){
+    this.rippleRestClient.sendAndConfirmPayment(payment, function(error, response){
       if (error) { return callback(error, null); }
       callback(null, response);
     });
@@ -46,21 +54,16 @@ PaymentBot.prototype = {
     var self = this;
     self._buildAndPay(function(error, response){
       if (error) {
-        console.log('err', error)
+        console.log('error', error)
       } else {
-        console.log('response', response)
-        if (response.success) {
-          setTimeout(function(){
-            self.loop();
-          }, self.interval)
-        }
+          self._loop();
       }
     });
   },
   start: function(){
-    this._loop(console.log);
+    this._loop();
   }
 };
 
-module.export = PaymentBot;
+module.exports = PaymentBot;
 
