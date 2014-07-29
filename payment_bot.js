@@ -56,8 +56,10 @@ PaymentBot.prototype = {
       if (error) {
         console.log('error', error)
       } else {
-          self._loop();
-          console.log('sent', response);
+          setTimeout(function(){
+            self._loop();
+            console.log('sent', response.destination_amount.value);
+          }, self.interval);
       }
     });
   },
