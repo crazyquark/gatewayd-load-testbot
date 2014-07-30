@@ -66,7 +66,7 @@ PaymentBot.prototype = {
       if (error) {
         return console.log('error', error)
       }
-
+      
       if (self.options.interval) {
         setTimeout(function() { self._loop() }, self.options.interval);
       } else {
