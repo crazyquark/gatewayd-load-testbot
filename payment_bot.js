@@ -1,32 +1,42 @@
 var RippleRestClient = require('ripple-rest-client');
 var async = require('async');
+var _ = require('underscore-node');
 
 var TEST_SECRET = process.env.TEST_SECRET;
 
 PaymentBot = function(options){
+
+  this.options = options || {};
+
+  this.payment = {
+    amount: this.options.amount, // If amount is not specified, value will be random
+    currency: this.options.currency || 'SFO',
+    recipient: this.options.to_address || 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg'
+  };
+
   this.rippleRestClient = new RippleRestClient({
     account: 'rMsQ53ZybFVfys3BF8Sjf5XPRd3LdYDpC3',
     secret: TEST_SECRET
   });
-  this.interval = options.interval;
-  this.payment = {
-    amount: options.amount || Math.random() / 10000,
-    currency: 'SFO',
-    recipient: 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg'
-  };
-}
+};
 
 PaymentBot.prototype = {
   _buildPayment: function(callback) {
     var self = this;
-    self.rippleRestClient.buildPayment(self.payment, function(error, payment){
+
+    if (!self.options.amount) {
+      self.payment.amount = function () {
+        return Math.random() / 1000
+      }();
+    }
+
+    self.rippleRestClient.buildPayment(self.payment, function(error, payment) {
       if (error) {
         return callback(error, null);
       } else if (payment.success) {
-        var paymentObject = {
-          payment: payment.payments[0]
-        };
-        paymentObject.payment.destination_tag = '5';
+        var paymentObject = {};
+        paymentObject.payment = payment.payments[0]
+        paymentObject.payment.destination_tag = self.options.destination_tag || '5';
         callback(null, paymentObject);
       } else {
         callback(payment.message, null);
@@ -54,13 +64,17 @@ PaymentBot.prototype = {
     var self = this;
     self._buildAndPay(function(error, response){
       if (error) {
-        console.log('error', error)
-      } else {
-          setTimeout(function(){
-            self._loop();
-            console.log('sent', response.destination_amount.value);
-          }, self.interval);
+        return console.log('error', error)
       }
+
+      if (self.options.interval) {
+        setTimeout(function() { self._loop() }, self.options.interval);
+      } else {
+        setImmediate(function() { self._loop() });
+      }
+
+      console.log('SENT', response.destination_amount.value);
+
     });
   },
   start: function(){
@@ -69,4 +83,3 @@ PaymentBot.prototype = {
 };
 
 module.exports = PaymentBot;
-
