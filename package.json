@@ -11,6 +11,6 @@
   "dependencies": {
     "ripple-rest-client": "^1.9.2",
     "async": "^0.9.0",
-    "underscore-node": "^0.1.2"
+    "nconf": "^0.6.9"
   }
 }

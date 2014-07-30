@@ -1,22 +1,24 @@
 var RippleRestClient = require('ripple-rest-client');
 var async = require('async');
-var _ = require('underscore-node');
+var config = require(__dirname+'/../config/config.js');
 
-var TEST_SECRET = process.env.TEST_SECRET;
+var ACCOUNT_SECRET = process.env.TEST_SECRET || config.get('ACCOUNT_SECRET');
 
 PaymentBot = function(options){
 
   this.options = options || {};
 
+  this.options.interval = config.get('INTERVAL');
+
   this.payment = {
-    amount: this.options.amount, // If amount is not specified, value will be random
-    currency: this.options.currency || 'SFO',
-    recipient: this.options.to_address || 'rf5Vk5vWzuSMKL5gdzbYKpJLtTfXBNprNg'
+    amount: this.options.amount || config.get('AMOUNT'), // If amount is not specified, value will be random
+    currency: this.options.currency || config.get('CURRENCY'),
+    recipient: this.options.to_account || config.get('TO_ACCOUNT')
   };
 
   this.rippleRestClient = new RippleRestClient({
-    account: 'rMsQ53ZybFVfys3BF8Sjf5XPRd3LdYDpC3',
-    secret: TEST_SECRET
+    account: this.options.from_account || config.get('FROM_ACCOUNT'),
+    secret: ACCOUNT_SECRET
   });
 };
 
@@ -35,8 +37,8 @@ PaymentBot.prototype = {
         return callback(error, null);
       } else if (payment.success) {
         var paymentObject = {};
-        paymentObject.payment = payment.payments[0]
-        paymentObject.payment.destination_tag = self.options.destination_tag || '5';
+        paymentObject.payment = payment.payments[0];
+        paymentObject.payment.destination_tag = self.options.destination_tag || config.get('DESTINATION_TAG');
         callback(null, paymentObject);
       } else {
         callback(payment.message, null);
@@ -64,9 +66,10 @@ PaymentBot.prototype = {
     var self = this;
     self._buildAndPay(function(error, response){
       if (error) {
-        return console.log('error', error)
+        console.log('buildAndPay:error', error);
+        setTimeout(function() { self._loop() }, 1000);
       }
-      
+
       if (self.options.interval) {
         setTimeout(function() { self._loop() }, self.options.interval);
       } else {
