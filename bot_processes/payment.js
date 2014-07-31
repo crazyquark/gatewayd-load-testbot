@@ -20,8 +20,8 @@ PaymentBot = function(options){
 PaymentBot.prototype = {
   _buildPayment: function(callback) {
     var self = this;
-    
-    if (!self.payment.amount) {
+
+    if (!self.options.amount) {
       self.payment.amount = function () {
         return Math.random() / 1000
       }();
