@@ -1,32 +1,27 @@
 var RippleRestClient = require('ripple-rest-client');
 var async = require('async');
-var config = require(__dirname+'/../config/config.js');
-
-var ACCOUNT_SECRET = process.env.TEST_SECRET || config.get('ACCOUNT_SECRET');
 
 PaymentBot = function(options){
+  var self = this;
+  self.options = options || {};
 
-  this.options = options || {};
-
-  this.options.interval = config.get('INTERVAL');
-
-  this.payment = {
-    amount: this.options.amount || config.get('AMOUNT'), // If amount is not specified, value will be random
-    currency: this.options.currency || config.get('CURRENCY'),
-    recipient: this.options.to_account || config.get('TO_ACCOUNT')
+  self.payment = {
+    amount: self.options.amount, // If amount is not specified, value will be random
+    currency: self.options.currency,
+    recipient: self.options.to_account
   };
 
-  this.rippleRestClient = new RippleRestClient({
-    account: this.options.from_account || config.get('FROM_ACCOUNT'),
-    secret: ACCOUNT_SECRET
+  self.rippleRestClient = new RippleRestClient({
+    account: self.options.from_account,
+    secret: self.options.secret
   });
 };
 
 PaymentBot.prototype = {
   _buildPayment: function(callback) {
     var self = this;
-
-    if (!self.options.amount) {
+    
+    if (!self.payment.amount) {
       self.payment.amount = function () {
         return Math.random() / 1000
       }();
@@ -38,7 +33,7 @@ PaymentBot.prototype = {
       } else if (payment.success) {
         var paymentObject = {};
         paymentObject.payment = payment.payments[0];
-        paymentObject.payment.destination_tag = self.options.destination_tag || config.get('DESTINATION_TAG');
+        paymentObject.payment.destination_tag = self.options.destination_tag ;
         callback(null, paymentObject);
       } else {
         callback(payment.message, null);

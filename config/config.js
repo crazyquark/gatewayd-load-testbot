@@ -9,7 +9,9 @@ nconf.defaults({
   "TO_ACCOUNT": null,
   "CURRENCY": null,
   "DESTINATION_TAG": null,
-  "INTERVAL": null
+  "INTERVAL": null,
+  "AMOUNT": null,
+  "BOT_ACCOUNT_SECRET": null
 });
 
 module.exports = nconf;
