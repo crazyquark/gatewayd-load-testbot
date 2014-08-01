@@ -46,7 +46,7 @@ RecordDeposit.prototype = {
         setImmediate(function(){ self._loop() });
       }
 
-      if (response) {
+      if (response.deposit.amount) {
         console.log('deposit:success', response.deposit.amount);
       }
 
