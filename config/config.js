@@ -11,7 +11,12 @@ nconf.defaults({
   "DESTINATION_TAG": null,
   "INTERVAL": null,
   "AMOUNT": null,
-  "BOT_ACCOUNT_SECRET": null
+  "BOT_ACCOUNT_SECRET": null,
+  "GATEWAYD_URL": null,
+  "GATEWAYD_CREDENTIALS": {
+    "username": null,
+    "password": null
+  }
 });
 
 module.exports = nconf;
