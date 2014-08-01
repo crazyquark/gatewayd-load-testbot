@@ -27,7 +27,9 @@ RecordDeposit.prototype = {
       if (error) {
         return callback(error, null);
       }
+
       callback(null, response);
+
     });
   },
   _loop: function(){
@@ -43,7 +45,11 @@ RecordDeposit.prototype = {
       } else {
         setImmediate(function(){ self._loop() });
       }
-      console.log('deposit:success', response.deposit.amount);
+
+      if (response) {
+        console.log('deposit:success', response.deposit.amount);
+      }
+
     })
   },
   start: function(){
