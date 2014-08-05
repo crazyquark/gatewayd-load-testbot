@@ -16,7 +16,8 @@ nconf.defaults({
   "GATEWAYD_CREDENTIALS": {
     "username": null,
     "password": null
-  }
+  },
+  "RIPPLE_REST_PATH": null
 });
 
 module.exports = nconf;

@@ -1,6 +1,6 @@
 {
   "name": "ripple-payment-bot",
-  "version": "0.0.0",
+  "version": "0.6.0",
   "description": "This small application automatically sends payments to a given ripple account at the specified time interval.",
   "main": "server.js",
   "scripts": {
