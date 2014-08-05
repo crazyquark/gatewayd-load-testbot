@@ -40,7 +40,7 @@ RecordDeposit.prototype = {
         return setTimeout(function(){ self._record() }, 4000);
       }
 
-      if (self.options.internal) {
+      if (self.options.interval) {
         setTimeout(function(){ self._loop() }, self.options.interval);
       } else {
         setImmediate(function(){ self._loop() });
