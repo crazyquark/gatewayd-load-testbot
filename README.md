@@ -1,4 +1,4 @@
-##Ripple Payment Bot
+##Gatewayd load test bot
 
 This software is a load simulator bot to test gatewayd applications. It runs processes that continuously make HTTP requests using gatewayd’s deposit endpoint (with basic auth) and [ripple-rest](https://github.com/ripple/ripple-rest)’s payment endpoint to simulate ‘outgoing’ and ‘incoming’ payments respectively. This bot application is fully configurable and easy to deploy. [ripple-rest](https://github.com/ripple/ripple-rest) should be running in parallel.
 
