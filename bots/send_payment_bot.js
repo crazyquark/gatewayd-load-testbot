@@ -7,7 +7,8 @@ var paymentBot = new PaymentBot({
   secret: config.get('BOT_ACCOUNT_SECRET'),
   to_account: config.get('TO_ACCOUNT'),
   destination_tag: config.get('DESTINATION_TAG'),
-  interval: config.get('INTERVAL')
+  interval: config.get('INTERVAL'),
+  issuer: config.get('TO_ACCOUNT')
 });
 
 paymentBot.start();
