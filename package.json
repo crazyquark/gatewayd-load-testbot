@@ -9,7 +9,7 @@
   "author": "Abiy Seifu",
   "license": "MIT",
   "dependencies": {
-    "ripple-rest-client": "^1.9.3",
+    "ripple-rest-client": "^1.10.2",
     "async": "^0.9.0",
     "nconf": "^0.6.9",
     "request": "^2.39.0",
