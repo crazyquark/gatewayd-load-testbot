@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "driver": "pg",
+    "dialect":"postgres",
+    "database": "bots_db",
+    "user": "bots_user",
+    "password": "password",
+    "host": "localhost",
+    "port": "5432",
+    "logging": false
+  }
+}
