@@ -1,0 +1,361 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.2.15
+3 info using node@v0.10.2
+4 verbose read json /Users/abiy/code/gatewayd-load-testbot/package.json
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/abiy/code/gatewayd-load-testbot',
+6 verbose install   [ 'ripple-rest-client',
+6 verbose install     'async',
+6 verbose install     'nconf',
+6 verbose install     'request',
+6 verbose install     'underscore-node',
+6 verbose install     'install',
+6 verbose install     'npm' ] ]
+7 verbose from cache /Users/abiy/code/gatewayd-load-testbot/package.json
+8 info preinstall ripple-payment-bot@0.6.0
+9 verbose from cache /Users/abiy/code/gatewayd-load-testbot/package.json
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'nconf@^0.6.9', null ]
+12 verbose cache add name=undefined spec="nconf@^0.6.9" args=["nconf@^0.6.9",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'nconf@^0.6.9',
+13 verbose parsed url   path: 'nconf@^0.6.9',
+13 verbose parsed url   href: 'nconf@^0.6.9' }
+14 verbose cache add name="nconf" spec="^0.6.9" args=["nconf","^0.6.9"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '^0.6.9',
+15 verbose parsed url   path: '^0.6.9',
+15 verbose parsed url   href: '^0.6.9' }
+16 verbose addNamed [ 'nconf', '^0.6.9' ]
+17 verbose addNamed [ null, null ]
+18 verbose cache add [ 'ripple-rest-client@^1.9.3', null ]
+19 verbose cache add name=undefined spec="ripple-rest-client@^1.9.3" args=["ripple-rest-client@^1.9.3",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'ripple-rest-client@^1.9.3',
+20 verbose parsed url   path: 'ripple-rest-client@^1.9.3',
+20 verbose parsed url   href: 'ripple-rest-client@^1.9.3' }
+21 verbose cache add name="ripple-rest-client" spec="^1.9.3" args=["ripple-rest-client","^1.9.3"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '^1.9.3',
+22 verbose parsed url   path: '^1.9.3',
+22 verbose parsed url   href: '^1.9.3' }
+23 verbose addNamed [ 'ripple-rest-client', '^1.9.3' ]
+24 verbose addNamed [ null, null ]
+25 verbose cache add [ 'async@^0.9.0', null ]
+26 verbose cache add name=undefined spec="async@^0.9.0" args=["async@^0.9.0",null]
+27 verbose parsed url { protocol: null,
+27 verbose parsed url   slashes: null,
+27 verbose parsed url   auth: null,
+27 verbose parsed url   host: null,
+27 verbose parsed url   port: null,
+27 verbose parsed url   hostname: null,
+27 verbose parsed url   hash: null,
+27 verbose parsed url   search: null,
+27 verbose parsed url   query: null,
+27 verbose parsed url   pathname: 'async@^0.9.0',
+27 verbose parsed url   path: 'async@^0.9.0',
+27 verbose parsed url   href: 'async@^0.9.0' }
+28 verbose cache add name="async" spec="^0.9.0" args=["async","^0.9.0"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '^0.9.0',
+29 verbose parsed url   path: '^0.9.0',
+29 verbose parsed url   href: '^0.9.0' }
+30 verbose addNamed [ 'async', '^0.9.0' ]
+31 verbose addNamed [ null, null ]
+32 verbose cache add [ 'request@^2.39.0', null ]
+33 verbose cache add name=undefined spec="request@^2.39.0" args=["request@^2.39.0",null]
+34 verbose parsed url { protocol: null,
+34 verbose parsed url   slashes: null,
+34 verbose parsed url   auth: null,
+34 verbose parsed url   host: null,
+34 verbose parsed url   port: null,
+34 verbose parsed url   hostname: null,
+34 verbose parsed url   hash: null,
+34 verbose parsed url   search: null,
+34 verbose parsed url   query: null,
+34 verbose parsed url   pathname: 'request@^2.39.0',
+34 verbose parsed url   path: 'request@^2.39.0',
+34 verbose parsed url   href: 'request@^2.39.0' }
+35 verbose cache add name="request" spec="^2.39.0" args=["request","^2.39.0"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: '^2.39.0',
+36 verbose parsed url   path: '^2.39.0',
+36 verbose parsed url   href: '^2.39.0' }
+37 verbose addNamed [ 'request', '^2.39.0' ]
+38 verbose addNamed [ null, null ]
+39 verbose cache add [ 'underscore-node@^0.1.2', null ]
+40 verbose cache add name=undefined spec="underscore-node@^0.1.2" args=["underscore-node@^0.1.2",null]
+41 verbose parsed url { protocol: null,
+41 verbose parsed url   slashes: null,
+41 verbose parsed url   auth: null,
+41 verbose parsed url   host: null,
+41 verbose parsed url   port: null,
+41 verbose parsed url   hostname: null,
+41 verbose parsed url   hash: null,
+41 verbose parsed url   search: null,
+41 verbose parsed url   query: null,
+41 verbose parsed url   pathname: 'underscore-node@^0.1.2',
+41 verbose parsed url   path: 'underscore-node@^0.1.2',
+41 verbose parsed url   href: 'underscore-node@^0.1.2' }
+42 verbose cache add name="underscore-node" spec="^0.1.2" args=["underscore-node","^0.1.2"]
+43 verbose parsed url { protocol: null,
+43 verbose parsed url   slashes: null,
+43 verbose parsed url   auth: null,
+43 verbose parsed url   host: null,
+43 verbose parsed url   port: null,
+43 verbose parsed url   hostname: null,
+43 verbose parsed url   hash: null,
+43 verbose parsed url   search: null,
+43 verbose parsed url   query: null,
+43 verbose parsed url   pathname: '^0.1.2',
+43 verbose parsed url   path: '^0.1.2',
+43 verbose parsed url   href: '^0.1.2' }
+44 verbose addNamed [ 'underscore-node', '^0.1.2' ]
+45 verbose addNamed [ null, null ]
+46 verbose cache add [ 'install@^0.1.7', null ]
+47 verbose cache add name=undefined spec="install@^0.1.7" args=["install@^0.1.7",null]
+48 verbose parsed url { protocol: null,
+48 verbose parsed url   slashes: null,
+48 verbose parsed url   auth: null,
+48 verbose parsed url   host: null,
+48 verbose parsed url   port: null,
+48 verbose parsed url   hostname: null,
+48 verbose parsed url   hash: null,
+48 verbose parsed url   search: null,
+48 verbose parsed url   query: null,
+48 verbose parsed url   pathname: 'install@^0.1.7',
+48 verbose parsed url   path: 'install@^0.1.7',
+48 verbose parsed url   href: 'install@^0.1.7' }
+49 verbose cache add name="install" spec="^0.1.7" args=["install","^0.1.7"]
+50 verbose parsed url { protocol: null,
+50 verbose parsed url   slashes: null,
+50 verbose parsed url   auth: null,
+50 verbose parsed url   host: null,
+50 verbose parsed url   port: null,
+50 verbose parsed url   hostname: null,
+50 verbose parsed url   hash: null,
+50 verbose parsed url   search: null,
+50 verbose parsed url   query: null,
+50 verbose parsed url   pathname: '^0.1.7',
+50 verbose parsed url   path: '^0.1.7',
+50 verbose parsed url   href: '^0.1.7' }
+51 verbose addNamed [ 'install', '^0.1.7' ]
+52 verbose addNamed [ null, null ]
+53 verbose cache add [ 'npm@^1.4.22', null ]
+54 verbose cache add name=undefined spec="npm@^1.4.22" args=["npm@^1.4.22",null]
+55 verbose parsed url { protocol: null,
+55 verbose parsed url   slashes: null,
+55 verbose parsed url   auth: null,
+55 verbose parsed url   host: null,
+55 verbose parsed url   port: null,
+55 verbose parsed url   hostname: null,
+55 verbose parsed url   hash: null,
+55 verbose parsed url   search: null,
+55 verbose parsed url   query: null,
+55 verbose parsed url   pathname: 'npm@^1.4.22',
+55 verbose parsed url   path: 'npm@^1.4.22',
+55 verbose parsed url   href: 'npm@^1.4.22' }
+56 verbose cache add name="npm" spec="^1.4.22" args=["npm","^1.4.22"]
+57 verbose parsed url { protocol: null,
+57 verbose parsed url   slashes: null,
+57 verbose parsed url   auth: null,
+57 verbose parsed url   host: null,
+57 verbose parsed url   port: null,
+57 verbose parsed url   hostname: null,
+57 verbose parsed url   hash: null,
+57 verbose parsed url   search: null,
+57 verbose parsed url   query: null,
+57 verbose parsed url   pathname: '^1.4.22',
+57 verbose parsed url   path: '^1.4.22',
+57 verbose parsed url   href: '^1.4.22' }
+58 verbose addNamed [ 'npm', '^1.4.22' ]
+59 verbose addNamed [ null, null ]
+60 silly lockFile e08de7d4-nconf-0-6-9 nconf@^0.6.9
+61 verbose lock nconf@^0.6.9 /Users/abiy/.npm/e08de7d4-nconf-0-6-9.lock
+62 silly lockFile 63a4c4c6-ripple-rest-client-1-9-3 ripple-rest-client@^1.9.3
+63 verbose lock ripple-rest-client@^1.9.3 /Users/abiy/.npm/63a4c4c6-ripple-rest-client-1-9-3.lock
+64 silly lockFile 7f39d2c2-async-0-9-0 async@^0.9.0
+65 verbose lock async@^0.9.0 /Users/abiy/.npm/7f39d2c2-async-0-9-0.lock
+66 info addNameTag [ 'nconf', '^0.6.9' ]
+67 info addNameTag [ 'ripple-rest-client', '^1.9.3' ]
+68 info addNameTag [ 'async', '^0.9.0' ]
+69 silly lockFile 11eac6e2-request-2-39-0 request@^2.39.0
+70 verbose lock request@^2.39.0 /Users/abiy/.npm/11eac6e2-request-2-39-0.lock
+71 silly lockFile 72e41092-underscore-node-0-1-2 underscore-node@^0.1.2
+72 verbose lock underscore-node@^0.1.2 /Users/abiy/.npm/72e41092-underscore-node-0-1-2.lock
+73 silly lockFile 5eab7887-install-0-1-7 install@^0.1.7
+74 verbose lock install@^0.1.7 /Users/abiy/.npm/5eab7887-install-0-1-7.lock
+75 silly lockFile 069e818d-npm-1-4-22 npm@^1.4.22
+76 verbose lock npm@^1.4.22 /Users/abiy/.npm/069e818d-npm-1-4-22.lock
+77 info addNameTag [ 'request', '^2.39.0' ]
+78 info addNameTag [ 'underscore-node', '^0.1.2' ]
+79 info addNameTag [ 'install', '^0.1.7' ]
+80 info addNameTag [ 'npm', '^1.4.22' ]
+81 verbose url raw nconf
+82 verbose url resolving [ 'https://registry.npmjs.org/', './nconf' ]
+83 verbose url resolved https://registry.npmjs.org/nconf
+84 info trying registry request attempt 1 at 02:21:59
+85 verbose etag "215QDS0ETLUTBK9440PGOTQHH"
+86 http GET https://registry.npmjs.org/nconf
+87 verbose url raw ripple-rest-client
+88 verbose url resolving [ 'https://registry.npmjs.org/', './ripple-rest-client' ]
+89 verbose url resolved https://registry.npmjs.org/ripple-rest-client
+90 info trying registry request attempt 1 at 02:21:59
+91 verbose etag "1CZMQGW63C2402AX7ESV0AITP"
+92 http GET https://registry.npmjs.org/ripple-rest-client
+93 verbose url raw async
+94 verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+95 verbose url resolved https://registry.npmjs.org/async
+96 info trying registry request attempt 1 at 02:21:59
+97 verbose etag "CE9RGV3926RWP5WTUOYLU7RSY"
+98 http GET https://registry.npmjs.org/async
+99 verbose url raw request
+100 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+101 verbose url resolved https://registry.npmjs.org/request
+102 info trying registry request attempt 1 at 02:22:00
+103 verbose etag "1STE800LJ2LIRO90CVI6HGMSV"
+104 http GET https://registry.npmjs.org/request
+105 verbose url raw underscore-node
+106 verbose url resolving [ 'https://registry.npmjs.org/', './underscore-node' ]
+107 verbose url resolved https://registry.npmjs.org/underscore-node
+108 info trying registry request attempt 1 at 02:22:00
+109 verbose etag "3WVCN9LURN9GEQ5MRVR1JCWE6"
+110 http GET https://registry.npmjs.org/underscore-node
+111 verbose url raw install
+112 verbose url resolving [ 'https://registry.npmjs.org/', './install' ]
+113 verbose url resolved https://registry.npmjs.org/install
+114 info trying registry request attempt 1 at 02:22:00
+115 verbose etag "8F8X8ZU9DTDNUIWOHNVIEZ80Z"
+116 http GET https://registry.npmjs.org/install
+117 verbose url raw npm
+118 verbose url resolving [ 'https://registry.npmjs.org/', './npm' ]
+119 verbose url resolved https://registry.npmjs.org/npm
+120 info trying registry request attempt 1 at 02:22:00
+121 verbose etag "6AXD9O8DRA32E48H620PL8WRX"
+122 http GET https://registry.npmjs.org/npm
+123 http 304 https://registry.npmjs.org/nconf
+124 silly registry.get cb [ 304,
+124 silly registry.get   { date: 'Sat, 22 Nov 2014 10:22:00 GMT',
+124 silly registry.get     server: 'Apache',
+124 silly registry.get     via: '1.1 varnish',
+124 silly registry.get     'last-modified': 'Sat, 22 Nov 2014 10:21:29 GMT',
+124 silly registry.get     'cache-control': 'max-age=60',
+124 silly registry.get     etag: '"215QDS0ETLUTBK9440PGOTQHH"',
+124 silly registry.get     age: '30',
+124 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
+124 silly registry.get     'x-cache': 'HIT',
+124 silly registry.get     'x-cache-hits': '2',
+124 silly registry.get     'x-timer': 'S1416651720.160904,VS0,VE0',
+124 silly registry.get     vary: 'Accept',
+124 silly registry.get     'content-length': '0',
+124 silly registry.get     'keep-alive': 'timeout=10, max=50',
+124 silly registry.get     connection: 'Keep-Alive' } ]
+125 verbose etag nconf from cache
+126 http 304 https://registry.npmjs.org/async
+127 silly registry.get cb [ 304,
+127 silly registry.get   { date: 'Sat, 22 Nov 2014 10:22:00 GMT',
+127 silly registry.get     server: 'Apache',
+127 silly registry.get     via: '1.1 varnish',
+127 silly registry.get     'last-modified': 'Sat, 22 Nov 2014 10:21:48 GMT',
+127 silly registry.get     'cache-control': 'max-age=60',
+127 silly registry.get     etag: '"CE9RGV3926RWP5WTUOYLU7RSY"',
+127 silly registry.get     age: '46',
+127 silly registry.get     'x-served-by': 'cache-sjc3124-SJC',
+127 silly registry.get     'x-cache': 'HIT',
+127 silly registry.get     'x-cache-hits': '2',
+127 silly registry.get     'x-timer': 'S1416651720.168893,VS0,VE0',
+127 silly registry.get     vary: 'Accept',
+127 silly registry.get     'content-length': '0',
+127 silly registry.get     'keep-alive': 'timeout=10, max=50',
+127 silly registry.get     connection: 'Keep-Alive' } ]
+128 verbose etag async from cache
+129 http 304 https://registry.npmjs.org/request
+130 silly registry.get cb [ 304,
+130 silly registry.get   { date: 'Sat, 22 Nov 2014 10:22:00 GMT',
+130 silly registry.get     server: 'Apache',
+130 silly registry.get     via: '1.1 varnish',
+130 silly registry.get     'last-modified': 'Sat, 22 Nov 2014 10:22:00 GMT',
+130 silly registry.get     'cache-control': 'max-age=60',
+130 silly registry.get     etag: '"1STE800LJ2LIRO90CVI6HGMSV"',
+130 silly registry.get     age: '34',
+130 silly registry.get     'x-served-by': 'cache-sjc3127-SJC',
+130 silly registry.get     'x-cache': 'HIT',
+130 silly registry.get     'x-cache-hits': '1',
+130 silly registry.get     'x-timer': 'S1416651720.168525,VS0,VE0',
+130 silly registry.get     vary: 'Accept',
+130 silly registry.get     'content-length': '0',
+130 silly registry.get     'keep-alive': 'timeout=10, max=50',
+130 silly registry.get     connection: 'Keep-Alive' } ]
+131 verbose etag request from cache
+132 silly lockFile 7f39d2c2-async-0-9-0 async@^0.9.0
+133 silly lockFile 7f39d2c2-async-0-9-0 async@^0.9.0
+134 silly lockFile e08de7d4-nconf-0-6-9 nconf@^0.6.9
+135 silly lockFile e08de7d4-nconf-0-6-9 nconf@^0.6.9
+136 silly lockFile 11eac6e2-request-2-39-0 request@^2.39.0
+137 silly lockFile 11eac6e2-request-2-39-0 request@^2.39.0
+138 error Error: No compatible version found: async@'^0.9.0'
+138 error Valid install targets:
+138 error ["0.1.0","0.1.1","0.1.2","0.1.3","0.1.4","0.1.5","0.1.6","0.1.7","0.1.8","0.1.9","0.1.10","0.1.11","0.1.12","0.1.13","0.1.14","0.1.15","0.1.16","0.1.17","0.1.18","0.1.19","0.1.20","0.1.21","0.1.22","0.2.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.2.6","0.2.7","0.2.8","0.2.9","0.2.10","0.3.0","0.4.0","0.4.1","0.5.0","0.6.0","0.6.1","0.6.2","0.7.0","0.8.0","0.9.0"]
+138 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:685:10)
+138 error     at /usr/local/lib/node_modules/npm/lib/cache.js:607:10
+138 error     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+138 error     at Object.oncomplete (fs.js:107:15)
+139 error If you need help, you may report this log at:
+139 error     <http://github.com/isaacs/npm/issues>
+139 error or email it to:
+139 error     <npm-@googlegroups.com>
+140 error System Darwin 14.0.0
+141 error command "node" "/usr/local/bin/npm" "install"
+142 error cwd /Users/abiy/code/gatewayd-load-testbot
+143 error node -v v0.10.2
+144 error npm -v 1.2.15
+145 verbose exit [ 1, true ]
