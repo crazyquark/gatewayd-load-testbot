@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="panel panel-default">
+       <div class="panel-heading">
+           <h4 class="pull-left">Bot Manager</h4>
+           <div class="pull-right btn-group">
+               <button ng-click="filter('bot_type=outgoing')" class="btn btn-default">Outgoing</button>
+               <button ng-click="filter('bot_type=incoming')" class="btn btn-default">Incoming</button>
+               <button ng-click="filter('state=in_progress')" class="btn btn-default">In Progress</button>
+           </div>
+           <div class="clearfix"></div>
+       </div>
+       <div class="panel-body">
+           <table class="table">
+               <tr>
+                   <td>Bot #</td>
+                   <td>Bot Type</td>
+                   <td>Interval</td>
+                   <td>To Account</td>
+                   <td>Amount</td>
+                   <td>Sent</td>
+                   <td>Target</td>
+                   <td>State</td>
+               </tr>
+               <tr ng-repeat="bot in bots">
+                   <td>{{bot.id}}</td>
+                   <td>{{bot.bot_type}}</td>
+                   <td>{{bot.interval}}</td>
+                   <td>{{bot.to_account}}</td>
+                   <td>{{bot.amount}}</td>
+                   <td>{{bot.payment_sent_count}}</td>
+                   <td>{{bot.payment_target_count}}</td>
+                   <td>{{bot.state}}</td>
+               </tr>
+           </table>
+       </div>
+    </div>
+</div>

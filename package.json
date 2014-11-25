@@ -29,6 +29,7 @@
     "sequelize-restful": "^0.3.0",
     "sql-mq-worker": "^1.0.3",
     "superagent": "^0.21.0",
-    "underscore-node": "^0.1.2"
+    "underscore-node": "^0.1.2",
+    "restangular": "^1.4.0"
   }
 }
