@@ -19,7 +19,12 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
         $scope.bots = response.data;
       }
     });
-  }
+  };
+
+  $scope.filter('state=in_progress', function(error, response) {
+    console.log(error, response);
+  });
+
   $scope.isSubmitting = false;
 
   $scope.newBot = {
@@ -38,16 +43,28 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
 
     Bots.create($scope.newBot, function(error, response) {
       if (error) {
-        console.log('ERRRRRRR', JSON.stringify(error, null, 2));
+        console.log('error', error);
         $scope.isSubmitting = false;
       } else if (response.status == 'error') {
-        console.log('errrrrr', response.message);
+        console.log('error', response.message);
         $scope.isSubmitting = false;
       } else {
         console.log('response', response);
-        $location.path('/');
+        $location.url('/');
+        $('#formModal').modal('hide');
+        Bots.filter('state=in_progress', function(error, response) {
+          if (!error) {
+            $scope.bots = response.data;
+          }
+        });
         $scope.isSubmitting = false;
       }
+    })
+  }
+  $scope.abort = function (bot) {
+    bot.state = 'aborted';
+    Bots.update(bot, function(error, response) {
+      console.log(error, response);
     })
   }
 

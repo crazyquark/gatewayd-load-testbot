@@ -37,13 +37,22 @@ botsApp.service('Bots', ['$http', function($http) {
     },
     create: function(bot, callback) {
       var _this = this;
-      console.log('posting', bot);
-      console.log('posting', _this.base_url);
       $http({
         method: "POST",
         url: _this.base_url,
         data: bot
         })
+        .success(_this.success(callback))
+        .error(_this.error(callback));
+    },
+    update: function(data, callback) {
+      var _this = this;
+
+      $http({
+        method: "PUT",
+        url: _this.base_url + '/' + data.id,
+        data: data
+      })
         .success(_this.success(callback))
         .error(_this.error(callback));
     }
