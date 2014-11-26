@@ -9,10 +9,6 @@ botsApp.config(['$routeProvider',
         controller: 'BotsCtrl',
         templateUrl: 'views/bots.html'
       }).
-      when('/new', {
-        controller: 'BotsCtrl',
-        templateUrl: 'views/new_bot.html'
-      }).
       otherwise({
         redirectTo: '/'
       });
