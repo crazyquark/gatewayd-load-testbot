@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="panel panel-default">
+       <div class="panel-heading">
+           <h4 class="pull-left">Bot Manager &nbsp; <button class="btn btn-danger" data-toggle="modal" data-target="#formModal"> + </button></h4>
+           <div class="pull-right btn-group">
+               <button ng-click="filter('')" class="btn btn-default">Reset</button>
+               <button ng-click="filter('bot_type=outgoing')" class="btn btn-default">Outgoing</button>
+               <button ng-click="filter('bot_type=incoming')" class="btn btn-default">Incoming</button>
+               <button ng-click="filter('state=in_progress')" class="btn btn-default">In Progress</button>
+               <button ng-click="filter('state=aborted')" class="btn btn-default">Aborted</button>
+           </div>
+           <div class="clearfix"></div>
+       </div>
+       <div class="panel-body">
+           <table class="table">
+               <tr>
+                   <td>Bot #</td>
+                   <td>Bot Type</td>
+                   <td>Interval</td>
+                   <td>To Account</td>
+                   <td>Amount</td>
+                   <td>Sent</td>
+                   <td>Target</td>
+                   <td>State</td>
+               </tr>
+               <tr ng-repeat="bot in bots">
+                   <td>{{bot.id}}</td>
+                   <td>{{bot.bot_type}}</td>
+                   <td>{{bot.interval}}</td>
+                   <td>{{bot.to_account}}</td>
+                   <td>{{bot.amount}}</td>
+                   <td>{{bot.payment_sent_count}}</td>
+                   <td>{{bot.payment_target_count}}</td>
+                   <td>
+                        <button ng-click="abort(bot)" ng-show="bot.state == 'in_progress'" class="btn-danger btn">Stop</button>
+                        <button ng-click="audit(bot)" ng-show="bot.state == 'completed'" data-toggle="modal" data-target="#auditResult" class="btn btn-info">Audit</button>
+                        <span ng-show="bot.state == 'aborted'">
+                            Aborted
+                        </span>
+                   </td>
+               </tr>
+           </table>
+       </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="newBotForm" class="form-login" ng-submit="createBot()" novalidate>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create New Bot</h4>
+            </div>
+            <div class="modal-body">
+
+                    <fieldset ng-disabled="isSubmitting">
+                        <div ng-show="errors.length > 0">
+                            <ul ng-repeat="error in errors" class="list-unstyled">
+                                <p>{{ error.message }}</p>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="ripple_address" ng-model="newBot.interval" placeholder="How ofter shold I send money? (millisecons)" required />
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" ng-model="newBot.bot_type" required>
+                                <option value="">-- Select Bot Type -- </option>
+                                <option value="outgoing">Outgoing</option>
+                                <option value="incoming">incoming</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="newBot.currency" placeholder="Currency" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="newBot.amount" placeholder="Amount | Default Random" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control" ng-model="newBot.payment_target_count" placeholder="How many payments in total?" required />
+                        </div>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" ng-disabled="newBotForm.$invalid">
+                    <span ng-show="isSubmitting">Launching Bot</span>
+                    <span ng-hide="isSubmitting">Launch Bot</span>
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="auditResult" tabindex="-1" role="dialog" aria-labelledby="auditResults" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Audit Result Bot ID: {{ audit_results.bot_id }}
+                        <span ng-show="audit_results.transactions_sent_by_bot == audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon-ok"></span>
+                        <span ng-show="audit_results.transactions_sent_by_bot != audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon glyphicon-remove"></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <p>transactions_sent_by_bot: <strong>{{ audit_results.transactions_sent_by_bot }}</strong></p>
+                    <p>transactions_received_by_gatewayd: <strong>{{ audit_results.transactions_received_by_gatewayd }}</strong></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

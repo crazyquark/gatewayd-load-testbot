@@ -1,4 +1,4 @@
-var BotManager = require(__dirname+'/lib/bot_manager');
+var BotManager = require(__dirname+'/lib/bots/bot_manager');
 
 var bot = new BotManager();
 
