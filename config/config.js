@@ -17,7 +17,8 @@ nconf.defaults({
     "username": null,
     "password": null
   },
-  "RIPPLE_REST_PATH": null
+  "RIPPLE_REST_PATH": null,
+  "KEY": null
 });
 
 module.exports = nconf;

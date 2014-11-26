@@ -30,6 +30,11 @@
     "sql-mq-worker": "^1.0.3",
     "superagent": "^0.21.0",
     "underscore-node": "^0.1.2",
-    "restangular": "^1.4.0"
+    "restangular": "^1.4.0",
+    "ripple-lib": "^0.9.3",
+    "body-parser": "^1.9.3",
+    "crypto": "0.0.3",
+    "passport-http": "^0.2.2",
+    "passport": "^0.2.1"
   }
 }

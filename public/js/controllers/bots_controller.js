@@ -35,7 +35,8 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     currency: 'GWD',
     state: 'in_progress',
     bot_type: 'outgoing',
-    interval: 2000
+    interval: 2000,
+    bot_invoice: 'invoice_id'
   }
 
   $scope.createBot = function () {
@@ -68,5 +69,20 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     })
   }
 
+  $scope.audit_results = {};
+  $scope.audit = function (bot) {
+    $scope.audit_results = {};
+    Bots.audit(bot, function(error, response) {
+      if (error) {
+        console.log(error);
+        alert('ERRR')
+      } else if (response.success) {
+        $scope.audit_results = response.audit;
+      } else {
+        console.log(response);
+        alert('ERRR')
+      }
+    });
+  }
 
 }]);
