@@ -6,10 +6,10 @@ This software is a load simulator bot to test gatewayd applications. It runs pro
 
 ```
 var paymentBot = new PaymentBot({
-  from_account: config.get('FROM_ACCOUNT'),
+  from_account: config.get('BOT_ACCOUNT'),
   currency: config.get('CURRENCY'),
   secret: config.get('BOT_ACCOUNT_SECRET'),
-  to_account: config.get('TO_ACCOUNT'),
+  to_account: config.get('GATEWAY_ACCOUNT'),
   destination_tag: config.get('DESTINATION_TAG')
 });
 

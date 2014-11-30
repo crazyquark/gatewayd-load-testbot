@@ -13,7 +13,13 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     }
   });
 
-  $scope.filter = function (querystring) {
+  Bots.filter('state=in_progress', function(error, response) {
+    if (!error) {
+      $scope.bots = response.data;
+    }
+  });
+
+  $scope.filterBots = function(querystring){
     Bots.filter(querystring, function(error, response) {
       if (!error) {
         $scope.bots = response.data;
@@ -21,9 +27,7 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     });
   };
 
-  $scope.filter('state=in_progress', function(error, response) {
-    console.log(error, response);
-  });
+
 
   $scope.isSubmitting = false;
 
@@ -37,10 +41,16 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     bot_type: 'outgoing',
     interval: 2000,
     bot_invoice: 'invoice_id'
-  }
+  };
 
   $scope.createBot = function () {
     $scope.isSubmitting = true;
+
+    if ($scope.newBot.bot_type == 'outgoing') {
+      $scope.newBot.to_account = 'ra9EVPRsiqncEfrRpJudDV34AqxFao8Zv9'
+    } else {
+      $scope.newBot.to_account = 'r4p4gZaWSq8Cs1d8mn1jaGqVU1HUns1ek3'
+    }
 
     Bots.create($scope.newBot, function(error, response) {
       if (error) {

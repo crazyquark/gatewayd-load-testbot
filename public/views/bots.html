@@ -3,11 +3,11 @@
        <div class="panel-heading">
            <h4 class="pull-left">Bot Manager &nbsp; <button class="btn btn-danger" data-toggle="modal" data-target="#formModal"> + </button></h4>
            <div class="pull-right btn-group">
-               <button ng-click="filter('')" class="btn btn-default">Reset</button>
-               <button ng-click="filter('bot_type=outgoing')" class="btn btn-default">Outgoing</button>
-               <button ng-click="filter('bot_type=incoming')" class="btn btn-default">Incoming</button>
-               <button ng-click="filter('state=in_progress')" class="btn btn-default">In Progress</button>
-               <button ng-click="filter('state=aborted')" class="btn btn-default">Aborted</button>
+               <button ng-click="filterBots('')" class="btn btn-default">Clear Filters</button>
+               <button ng-click="filterBots('bot_type=outgoing')" class="btn btn-default">Outgoing</button>
+               <button ng-click="filterBots('bot_type=incoming')" class="btn btn-default">Incoming</button>
+               <button ng-click="filterBots('state=in_progress')" class="btn btn-default">In Progress</button>
+               <button ng-click="filterBots('state=aborted')" class="btn btn-default">Aborted</button>
            </div>
            <div class="clearfix"></div>
        </div>
