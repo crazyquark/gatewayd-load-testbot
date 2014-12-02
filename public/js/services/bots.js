@@ -61,8 +61,14 @@ botsApp.service('Bots', ['$http', function($http) {
       $http.get('/audit/' + data.bot_invoice)
         .success(_this.success(callback))
         .error(_this.error(callback));
-    }
+    },
 
+    diff: function (data, callback) {
+      var _this = this;
+      $http.get('/diff/' + data.bot_invoice)
+        .success(_this.success(callback))
+        .error(_this.error(callback));
+    }
   };
 
   return new Bots();

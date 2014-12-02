@@ -103,23 +103,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Audit Result Bot ID: {{ audit_results.bot_id }}
-                        <span ng-show="audit_results.transactions_sent_by_bot == audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon-ok"></span>
-                        <span ng-show="audit_results.transactions_sent_by_bot != audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon glyphicon-remove"></span>
-                    </h4>
-                </div>
-                <div class="modal-body">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Audit Result Bot ID: {{ audit_results.bot_id }}
+                    <span ng-show="audit_results.transactions_sent_by_bot == audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon-ok"></span>
+                    <span ng-show="audit_results.transactions_sent_by_bot != audit_results.transactions_received_by_gatewayd" class="glyphicon glyphicon glyphicon-remove"></span>
+                </h4>
+            </div>
+            <div class="modal-body">
 
-                    <p>transactions_sent_by_bot: <strong>{{ audit_results.transactions_sent_by_bot }}</strong></p>
-                    <p>transactions_received_by_gatewayd: <strong>{{ audit_results.transactions_received_by_gatewayd }}</strong></p>
+                <p>transactions_sent_by_bot: <strong>{{ audit_results.transactions_sent_by_bot }}</strong></p>
+                <p>transactions_received_by_gatewayd: <strong>{{ audit_results.transactions_received_by_gatewayd }}</strong></p>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" ng-show="audit_results.transactions_sent_by_bot != audit_results.transactions_received_by_gatewayd" ng-click="diff(audit_results)">Diff</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>

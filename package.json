@@ -35,6 +35,7 @@
     "body-parser": "^1.9.3",
     "crypto": "0.0.3",
     "passport-http": "^0.2.2",
-    "passport": "^0.2.1"
+    "passport": "^0.2.1",
+    "deep-diff": "^0.3.0"
   }
 }
