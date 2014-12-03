@@ -17,7 +17,7 @@ nconf.defaults({
     "username": null,
     "password": null
   },
-  "RIPPLE_REST_PATH": null,
+  "RIPPLE_REST_API": null,
   "KEY": null
 });
 
