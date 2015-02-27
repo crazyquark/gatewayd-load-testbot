@@ -47,8 +47,6 @@ botsApp.controller('BotsCtrl', ['$scope', '$rootScope', '$location', 'Bots', fun
     $scope.isSubmitting = true;
 
     if ($scope.newBot.bot_type == 'outgoing') {
-      $scope.newBot.to_account = 'ra9EVPRsiqncEfrRpJudDV34AqxFao8Zv9'
-    } else {
       $scope.newBot.to_account = 'r4p4gZaWSq8Cs1d8mn1jaGqVU1HUns1ek3'
     }
 
